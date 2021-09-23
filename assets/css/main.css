@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body { margin: 0px; padding: 0px; height: 100%; width: 100%; background-color: #454d6a; color: white; font-family: 'Roboto', sans-serif; }
+/*********** Navbar ** */
+nav { display: flex; flex-direction: column; float: left; background-color: #3a3e4b; height: 100%; width: 100px; position: fixed; bottom: 0; z-index: 999; }
+nav img { width: 90%; height: 90%; margin: 5%; }
+nav a img { width: 60%; height: 60%; }
+nav .navSquare { position: relative; display: block; width: 100px; height: 100px; border-bottom: 1px solid #99AAB5; text-align: center; }
+nav .navSquare a { text-decoration: none; color: white; margin: 0px; }
+nav .navSquare .monkeySpin { animation-name: spin; animation-duration: 1000ms; animation-iteration-count: infinite; }
+@keyframes spin { from { transform: rotate(0deg); }
+to { transform: rotate(360deg); } }
+nav .navSquare:hover { background-color: #4d515d; }
+nav .noHover:hover { background-color: #3a3e4b; }
+nav .selected { background-color: #317ed4 !important; }
+/************** Main view ** */
+.container { display: flex; flex-direction: column; float: right; padding: 4%; width: 85%; margin-left: 100px; position: relative; }
+.container .row { width: 100%; display: flex; flex-direction: row; justify-content: space-between; }
+.container .col { display: flex; flex-direction: column; justify-content: space-between; }
+a { text-decoration: none; color: white; margin: 0px; }
+p a, h4 a { text-decoration: underline; }
+.box { position: relative; width: 100%; padding: 20px; margin: 10px; background-color: #525b7a; --notchSize: 40px; clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, 0px 0%, 100% 0px, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0px 100%, 0% 0px); }
+.box p { padding-left: 10px; }
+code { font-family: Consolas, monospace; background-color: #404040; padding: 1px; padding-left: 5px; padding-right: 5px; }
+.skills { margin-top: 0; margin-bottom: 0; padding-left: 10px; list-style-type: none; min-width: 150px; }
+.skills li:nth-child(odd) { margin-top: 5px; width: 60%; float: left; }
+.skills li:nth-child(even) { width: 40%; float: right; }
+/********* Blog ** */
+.blogImage { display: block; width: 50%; margin: 10px; float: right; }
+.blogImageInline { display: block; max-width: 50%; margin: 10px; }
+.blogBtn { background-color: #317ed4; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; cursor: pointer; --notchSize: 20px; clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, 0px 0%, 100% 0px, 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, 0px 100%, 0% 0px); }
+.disabled { cursor: default; background-color: #3a3e4b; }
+/****************** Media Query's ** */
+@media only screen and (max-width: 1024px) { nav { width: 70px; } nav .navSquare { width: 70px; height: 70px; font-size: 80%; } .container { margin-left: 70px; } .container .row { flex-direction: column; width: 90%; } .container .row .blogImage { display: block; float: none; width: 100%; height: 100%; margin: 10px; } .container .row .blogImageInline { display: block; max-width: 100%; height: 100%; margin: 10px; } .container .col { width: 90%; } }
+@media only screen and (max-width: 720px) { body { height: 100%; overflow: auto; } nav { flex-direction: row; height: 70px; width: 100%; position: sticky; float: bottom; } nav .navSquare { width: 70px; height: 70px; font-size: 80%; border-right: 1px solid #99AAB5; border-bottom: none; } .container { margin-left: 10px; margin-right: 10px; margin-bottom: 10px; padding-bottom: 10px; width: 90%; } .container .row { width: 100%; } .box { position: relative; width: 90%; padding: 20px; margin: 10px; background-color: #4d5676; } }
+/*# sourceMappingURL=main.css.map */

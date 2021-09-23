@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name='description' content="My home on the Internet. Discussing programming, Linux, and other tech topics.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nickolas Gupton</title>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="https://nickolas.gupton.xyz/assets/css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nickolas.gupton.xyz/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nickolas.gupton.xyz/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="https://nickolas.gupton.xyz/favicons/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://nickolas.gupton.xyz/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nickolas.gupton.xyz/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://nickolas.gupton.xyz/favicons/site.webmanifest">
+    <link rel="mask-icon" href="https://nickolas.gupton.xyz/favicons/safari-pinned-tab.svg" color="#454d6a">
+    <link rel="shortcut icon" href="https://nickolas.gupton.xyz/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Nickolas Gupton">
+    <meta name="application-name" content="Nickolas Gupton">
+    <meta name="msapplication-TileColor" content="#454d6a">
+    <meta name="msapplication-TileImage" content="https://nickolas.gupton.xyz/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="https://nickolas.gupton.xyz/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#454d6a">
+    <script src="https://nickolas.gupton.xyz/assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <h1 style="display:none;">Nickolas Gupton's Website and Blog</h1>
+    <div class="container">
+      <div class="row">
+        <div class="box">
+          <h2>Installing BookStack on Ubuntu Server 20.04 with SSL</h2>
+          <hr />
+          <div>
+            <p>May 21, 2020</p>
+            <p><a href="https://www.bookstackapp.com/">BookStack</a> is a free and open source Wiki software. Its powerful markdown editor and ease of use has made it a popular alternative to software such as <a href="https://www.dokuwiki.org/DokuWiki">DokuWiki</a> and <a href="https://wiki.js.org/">Wiki.js</a>. It is also very easy to setup and get running. In this article I will show you how to install and configure BookStack to work on Ubuntu Server 20.04 with an SSL certificate from LetsEncrypt.</p>
+            <p>The first thing you need to do is install Ubuntu Server 20.04 on any platform of your choice. Personally I use <a href="https://www.linode.com/">Linode</a>, however any provider or even self-hosting would work just fine for this.</p>
+            <p>Once that is complete we can move onto installing BookStack itself, this is very easy and these instructions are <a href="https://www.bookstackapp.com/docs/admin/installation/#ubuntu-2004">directly from their Wiki</a>.</p>
+            <script src="https://gist.github.com/CorruptComputer/83206999a8d98bac6bcdcb0fef8f9632.js"></script>
+            <p>Enter your domain name that the server will be hosted at when prompted.</p>
+            <p>Once that completes you should be able to access BookStack in the browser. With the default username being admin@admin.com and password being password, these should be changed, but first lets setup SSL to make secure.</p>
+            <p>First thing to do is install certbot and get the certificate generated.</p>
+            <script src="https://gist.github.com/CorruptComputer/33b7441b6d020c074c3954979bd98886.js"></script>
+            <p>Once that is done we can configure Apache to use the certificate for Bookstack.</p>
+            <p>This is what the file should look like before: <script src="https://gist.github.com/CorruptComputer/31290e6174dd5d0f497b37f802c46987.js"></script></p>
+            <p>This is after making the required changes: (the only changes required happen above line 10) <script src="https://gist.github.com/CorruptComputer/10724d22cc8b9b8be2ee4830a38016b1.js"></script></p>
+            <p>Finally you need to enable SSL on Apache2 and restart the service: <script src="https://gist.github.com/CorruptComputer/36ece391cb4ab83767971bae4b1059ee.js"></script></p>
+            <p>Aaaaaaaand just like that you’re done! Its a fairly simple setup, and below you can find some extra steps for afterwards to help keep it secure.</p>
+            <ol>
+              <li>Change the admin users password and email address.</li>
+              <li><a href="https://www.bookstackapp.com/docs/admin/email-config/">Setup SMTP</a> for password resets.</li>
+              <li>Add <code class="language-plaintext highlighter-rouge">SESSION_SECURE_COOKIE=true</code> to <code class="language-plaintext highlighter-rouge">/var/www/bookstack/.env</code> so cookies are only delivered over SSL.</li>
+              <li>Setup UFW to block SSH from un-trusted IP addresses.</li>
+              <li>Setup fail2ban to block brute force attacks from logging into your server.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="navSquare noHover">
+        <img id="monkey" src="https://nickolas.gupton.xyz/images/monkey.png" alt="Monkey" />
+      </div>
+      <div class="navSquare" id="homeButton">
+        <a href="https://nickolas.gupton.xyz/">
+          <img src="https://nickolas.gupton.xyz/images/home.png" alt="Home" />
+          <div>Home</div>
+        </a>
+      </div>
+      <div class="navSquare" id="blogButton">
+        <a href="https://nickolas.gupton.xyz/blog/">
+          <img src="https://nickolas.gupton.xyz/images/blog.png" alt="Blog" />
+          <div>Blog</div>
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>

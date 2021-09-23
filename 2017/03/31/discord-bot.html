@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name='description' content="My home on the Internet. Discussing programming, Linux, and other tech topics.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nickolas Gupton</title>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="https://nickolas.gupton.xyz/assets/css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nickolas.gupton.xyz/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nickolas.gupton.xyz/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="https://nickolas.gupton.xyz/favicons/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://nickolas.gupton.xyz/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nickolas.gupton.xyz/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://nickolas.gupton.xyz/favicons/site.webmanifest">
+    <link rel="mask-icon" href="https://nickolas.gupton.xyz/favicons/safari-pinned-tab.svg" color="#454d6a">
+    <link rel="shortcut icon" href="https://nickolas.gupton.xyz/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Nickolas Gupton">
+    <meta name="application-name" content="Nickolas Gupton">
+    <meta name="msapplication-TileColor" content="#454d6a">
+    <meta name="msapplication-TileImage" content="https://nickolas.gupton.xyz/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="https://nickolas.gupton.xyz/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#454d6a">
+    <script src="https://nickolas.gupton.xyz/assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <h1 style="display:none;">Nickolas Gupton's Website and Blog</h1>
+    <div class="container">
+      <div class="row">
+        <div class="box">
+          <h2>Digital Ocean and a Discord Bot</h2>
+          <hr />
+          <img src="/images/blog/2017-03-31-discord-bot/DigitalOceanDiscordBot.png" alt="Digital Ocean and a Discord Bot" class="blogImage">
+          <div>
+            <p>March 31, 2017</p>
+            <p>If anyone has ever used <a href="https://github.com/Kwoth/NadekoBot">NadekoBot</a>, you know that its great. But you know what could make it even better? Being 24/7.</p>
+            <p>Ok so its fairly simple if you follow the <a href="http://nadekobot.readthedocs.io/en/latest/guides/Linux%20Guide/">guide</a>, but I quickly ran into a problem. 
+              When I would end the ssh session, the bot would shutdown. I tried a few things, the first being: make a new user, run the bot there, then switch users leaving the old one logged in.
+              However that didn’t really work either as all users were logged out when I ended the ssh session. So next I moved on to try <code class="language-plaintext highlighter-rouge">tmux</code>, and to my surprise it actually worked!</p>
+            <p>1) So to get started you’re just gonna type <code class="language-plaintext highlighter-rouge">tmux new -s nadeko</code><br />
+              2) After that you just start Nadeko normally with <code class="language-plaintext highlighter-rouge">bash linuxAIO.sh</code><br />
+              3) Once the bot is running and configured as you would like, type <code class="language-plaintext highlighter-rouge">ctrl+b</code> then <code class="language-plaintext highlighter-rouge">d</code>. This detaches the process from the current user and allows it to keep running when you logout.</p>
+            <p>If you want to reattach your bot you just type <code class="language-plaintext highlighter-rouge">tmux attach -t nadeko</code> and you’ll be right back to the bot. 
+              Personally I have mine setup to reboot and update every night at midnight, however if you wanted to do that manually this is an easy way to.</p>
+            <p>EDIT: Instructions have also been added to the docs <a href="https://nadekobot.readthedocs.io/en/latest/guides/Linux%20Guide/#running-nadekobot">here</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="navSquare noHover">
+        <img id="monkey" src="https://nickolas.gupton.xyz/images/monkey.png" alt="Monkey" />
+      </div>
+      <div class="navSquare" id="homeButton">
+        <a href="https://nickolas.gupton.xyz/">
+          <img src="https://nickolas.gupton.xyz/images/home.png" alt="Home" />
+          <div>Home</div>
+        </a>
+      </div>
+      <div class="navSquare" id="blogButton">
+        <a href="https://nickolas.gupton.xyz/blog/">
+          <img src="https://nickolas.gupton.xyz/images/blog.png" alt="Blog" />
+          <div>Blog</div>
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>

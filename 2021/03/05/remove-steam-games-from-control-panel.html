@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name='description' content="My home on the Internet. Discussing programming, Linux, and other tech topics.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nickolas Gupton</title>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="https://nickolas.gupton.xyz/assets/css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nickolas.gupton.xyz/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nickolas.gupton.xyz/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="https://nickolas.gupton.xyz/favicons/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://nickolas.gupton.xyz/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nickolas.gupton.xyz/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://nickolas.gupton.xyz/favicons/site.webmanifest">
+    <link rel="mask-icon" href="https://nickolas.gupton.xyz/favicons/safari-pinned-tab.svg" color="#454d6a">
+    <link rel="shortcut icon" href="https://nickolas.gupton.xyz/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Nickolas Gupton">
+    <meta name="application-name" content="Nickolas Gupton">
+    <meta name="msapplication-TileColor" content="#454d6a">
+    <meta name="msapplication-TileImage" content="https://nickolas.gupton.xyz/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="https://nickolas.gupton.xyz/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#454d6a">
+    <script src="https://nickolas.gupton.xyz/assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <h1 style="display:none;">Nickolas Gupton's Website and Blog</h1>
+    <div class="container">
+      <div class="row">
+        <div class="box">
+          <h2>Removing Steam Games from Control Panel and Apps list on Windows</h2>
+          <hr />
+          <div>
+            <p>March 5, 2021</p>
+            <p>It might just be me, but I find these to be absolutely useless and actually get in the way of actually finding the apps that I want to remove. 
+              Not only that but when you try to uninstall these from here, it does nothing but launch Steam so why have them here in the first place?</p>
+            <p>If you’re like me and have almost 60 games installed it can become almost impossible to find what you need.
+              Thankfully though there is a simple way to remove these from the list using PowerShell.</p>
+            <p>You can run the following PowerShell script (as Admin):
+              <script src="https://gist.github.com/CorruptComputer/731249641a93bbbd38b9a22dfd6d70e6.js"></script></p>
+            <p>The output should look something like this for you:
+              <img src="/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames1.png" alt="Steam Games Image 1" title="Steam Games Image 1" class="blogImageInline" /></p>
+            <hr />
+            <p>As an extension to this you could add the script as a Scheduled Task so that you don’t need to manually run it every time you install a game.</p>
+            <p>Open Task Scheduler and Create a new Task:
+              <img src="/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames2.png" alt="Steam Games Image 2" title="Steam Games Image 2" class="blogImageInline" /></p>
+            <p>General Settings:
+              <img src="/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames3.png" alt="Steam Games Image 3" title="Steam Games Image 3" class="blogImageInline" /></p>
+            <p>Create a new Trigger to have it run when you’d like. Personally I have it set to run whenever I log on:
+              <img src="/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames4.png" alt="Steam Games Image 4" title="Steam Games Image 4" class="blogImageInline" /></p>
+            <p>Next create the action to run:</p>
+            <ul>
+              <li>Program/Script: <code class="language-plaintext highlighter-rouge">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</code></li>
+              <li>Add arguments: <code class="language-plaintext highlighter-rouge">-ExecutionPolicy Bypass -File "C:\[path to your file]\Remove-Steam-Games-From-Control-Panel.ps1"</code></li>
+              <li>Start in: <code class="language-plaintext highlighter-rouge">C:\[path to your file]</code>
+                <img src="/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames5.png" alt="Steam Games Image 5" title="Steam Games Image 5" class="blogImageInline" /></li>
+            </ul>
+            <p>Aaaaaaand you’re done!</p>
+            <p>Now your Control Panel and Apps list will be a bit cleaner and easier to find stuff in. 
+              If you want you can also check out my other guide on <a href="https://nickolas.gupton.xyz/2019/03/14/privacy-and-windows-10.html">how to make your install of Windows a bit more privacy friendly</a> than it would be out of the box.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="navSquare noHover">
+        <img id="monkey" src="https://nickolas.gupton.xyz/images/monkey.png" alt="Monkey" />
+      </div>
+      <div class="navSquare" id="homeButton">
+        <a href="https://nickolas.gupton.xyz/">
+          <img src="https://nickolas.gupton.xyz/images/home.png" alt="Home" />
+          <div>Home</div>
+        </a>
+      </div>
+      <div class="navSquare" id="blogButton">
+        <a href="https://nickolas.gupton.xyz/blog/">
+          <img src="https://nickolas.gupton.xyz/images/blog.png" alt="Blog" />
+          <div>Blog</div>
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>

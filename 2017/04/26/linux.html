@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name='description' content="My home on the Internet. Discussing programming, Linux, and other tech topics.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nickolas Gupton</title>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="https://nickolas.gupton.xyz/assets/css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://nickolas.gupton.xyz/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://nickolas.gupton.xyz/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="https://nickolas.gupton.xyz/favicons/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://nickolas.gupton.xyz/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://nickolas.gupton.xyz/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://nickolas.gupton.xyz/favicons/site.webmanifest">
+    <link rel="mask-icon" href="https://nickolas.gupton.xyz/favicons/safari-pinned-tab.svg" color="#454d6a">
+    <link rel="shortcut icon" href="https://nickolas.gupton.xyz/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Nickolas Gupton">
+    <meta name="application-name" content="Nickolas Gupton">
+    <meta name="msapplication-TileColor" content="#454d6a">
+    <meta name="msapplication-TileImage" content="https://nickolas.gupton.xyz/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="https://nickolas.gupton.xyz/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#454d6a">
+    <script src="https://nickolas.gupton.xyz/assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <h1 style="display:none;">Nickolas Gupton's Website and Blog</h1>
+    <div class="container">
+      <div class="row">
+        <div class="box">
+          <h2>My Adventures with Linux</h2>
+          <hr />
+          <img src="/images/blog/2017-04-26-linux/GNOMEdesktop.png" alt="My Adventures with Linux" class="blogImage">
+          <div>
+            <p>April 26, 2017</p>
+            <p>I love Linux, but there are so many different distributions. So how can I know if my current one is my favorite if I don’t try them all? Well I hopped distros quite often, starting with <a href="https://www.linuxmint.com">Mint 17</a> a couple years ago. After awhile I got tired of some packages being more out of date than other distros, so I moved to Fedora 25 and loved it! The only problem, finding <code class="language-plaintext highlighter-rouge">.rpm</code> packages instead of <code class="language-plaintext highlighter-rouge">.deb</code>. For the most part I had what I wanted, and what I couldn’t find was usually available on <a href="https://rpmfusion.org">RPM Fusion</a>, but still I felt limited by Fedora’s packages only including open source software. So I kept looking, with 3 things in mind:</p>
+            <p>1) Packages had to be up to date.<br />
+              2) <a href="https://www.gnome.org">GNOME</a> desktop environment.<br />
+              3) Have a ton of packages available, and easily installable for ones not included in the package manager.</p>
+            <p>At first I came to <a href="https://www.opensuse.org">openSUSE</a> Tumbleweed and GNOME wasn’t default, but it was still easily changed during the installation. There were more packages available, however it still used <code class="language-plaintext highlighter-rouge">.rpm</code> packages. But I did learn something, I REALLY liked rolling releases.</p>
+            <p>So I started looking for other rolling release distros and came across Arch. I had known about Arch for awhile however I had never really tried it as I never really considered myself as good enough to get it setup. But I just said what the hell, tried it, and failed. I got my internet working, GNOME installed, and everything seemed well until I tried to open the GNOME terminal. It kept crashing when I tried to open it, and switching to <code class="language-plaintext highlighter-rouge">tty2</code> would cause GNOME to crash and reset the x-server, putting me back into my GNOME login screen.</p>
+            <p>By this point I decided maybe Arch wasn’t for me, and just saw that <a href="https://www.ubuntu.com">Ubuntu 17.04</a> had just released. So I decided to give it a try because with it just releasing the packages would be up to date, <a href="https://ubuntugnome.org">Ubuntu GNOME</a> is an official flavor, and Ubuntu usually has the most support for packages. I got it installed and working but something still seemed lacking, I would run <code class="language-plaintext highlighter-rouge">sudo apt update</code> and there would be none. I missed the rolling releases.</p>
+            <p>So I went on the hunt again, and found Antergos! It was a based on Arch so it would be up to date and rolling release, you can select any of the major desktop environments when you install, and I would have access to the <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository">Arch User Repository</a> which has just about every package you could ever need. This also had a few advantages over Arch, I knew that GNOME and other programs would work out of the box and unlike its competitor <a href="https://manjaro.org">Manjaro</a> it still uses Arch’s repositories. Which means that Antergos is basically just an easy Arch installer.</p>
+            <p>I have now been using Antergos for about two weeks, and have found no issues with it. The AUR packages are great and have been easy to install, and the updates are frequent yet still incredibly stable. I have a feeling that I am going to stay with Antergos because: it is fast, stable, and up to date with a rolling release cycle (or as they say “Always Fresh. Never Frozen.”).</p>
+            <p>EDIT 2017-04-26: Grammar, spelling, and sources. <br />
+              EDIT 2021-03-10: Remove Antergos link. RIP :(</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <div class="navSquare noHover">
+        <img id="monkey" src="https://nickolas.gupton.xyz/images/monkey.png" alt="Monkey" />
+      </div>
+      <div class="navSquare" id="homeButton">
+        <a href="https://nickolas.gupton.xyz/">
+          <img src="https://nickolas.gupton.xyz/images/home.png" alt="Home" />
+          <div>Home</div>
+        </a>
+      </div>
+      <div class="navSquare" id="blogButton">
+        <a href="https://nickolas.gupton.xyz/blog/">
+          <img src="https://nickolas.gupton.xyz/images/blog.png" alt="Blog" />
+          <div>Blog</div>
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>
